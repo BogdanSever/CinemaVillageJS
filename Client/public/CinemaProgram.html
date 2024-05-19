@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>Cinema Village</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="output.css">
+      
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap"
+            rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+        <script src="TimeSelect.js" defer></script>
+        <script src="https://kit.fontawesome.com/7d75bced7a.js" crossorigin="anonymous"></script>
+
+    </head>
+    <body class="bg-zinc-50">
+    
+        <div>
+            <div id="overlay" class="fixed bg-opacity-30 bg-slate-800 h-screen w-screen z-30 hidden ">
+                <div class="flex flex-row-reverse mr-8 mt-6 opacity-100 ">
+                    <button id="close" class="opacity-100">
+    
+                        <span class="absolute block w-10  h-1 rounded-full rotate-45 bg-slate-900 opacity-100"></span>
+                        <span class="block w-10  h-1 rounded-full -rotate-45 bg-slate-900 opacity-100"></span>
+    
+                    </button>
+                </div>
+                <div class="flex items-center justify-center">
+                    <div id="transition" class="z-20 flex flex-col items-center content-center justify-evenly rounded-l-full bg-zinc-50">
+                            <img class="w-36 h-auto " src="IuliaLogo.png">
+                            <button id="logIn" class="mb-4 ml-10 text-lg font-BarlowSemiCondensed text-neutral-400">Log In -></button>
+                    </div>
+                    <div id="SignUp" class="z-30 text-center h-auto w-44 p-32 bg-red-400 rounded-xl flex flex-col items-center md:px-44 shadow-2xl">
+    
+                        <h1 class="w-32 text-zinc-50 font-Fraunces text-2xl mb-8">Sign Up</h1>
+                        <form id="form" class="flex flex-col gap-5 justify-evenly font-BarlowSemiCondensed text-xl text-zinc-50">
+                            <label> Email adress</label>
+                            <input class="rounded-full" type="email">
+                            <label> Password</label>
+                            <input class="rounded-full" type="password">
+                            <label> Repeat password</label>
+                            <input class="rounded-full" type="password">
+    
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div>
+            <nav class=" flex items-center justify-between p-5 text-slate-700  font-BarlowSemiCondensed">
+                <a href="./index.html" class="text-4xl font-Fraunces">Cinema Village</a>
+                <ul id="navItems" class="hidden items-center sm:flex md:flex-row md:gap-6 md:mr-3 md:text-2xl md:visible">
+    
+                    <li class="hover:text-red-400"> <a href="./">About</a></li>
+                    <li class="hover:text-red-400"> <a href="./CinemaProgram.html">Program</a></li>
+                    <li class="hover:text-red-400"> <a href="./">Contact</a></li>
+    
+    
+                    <button id="join"
+                        class="relative inline-flex items-center justify-start px-5 py-3 overflow-hidden font-BarlowSemiCondensed rounded-full group">
+                        <span
+                            class="w-32 h-32 rotate-45 translate-x-12 -translate-y-2 absolute left-0 top-0 bg-rose-400 opacity-[3%]"></span>
+                        <span
+                            class="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-x-56 -translate-y-24 bg-red-400 opacity-100 group-hover:-translate-x-8"></span>
+                        <span
+                            class="relative w-full text-left text-slate-800 transition-colors duration-200 ease-in-out group-hover:text-white">Get
+                            Tickets</span>
+                        <span class="absolute inset-0 border-2 border-slate-800 rounded-full hover:border-red-400"></span>
+    
+                    </button>
+        </div>
+    
+                </ul>
+    
+            </nav>
+        </div>
+        <div class=" ">
+            <div class=" p-4 flex flex-col justify-center items-center gap-6"> 
+               
+                <h1 class=" font-Fraunces text-4xl md:text-6xl text-slate-700 ">Program</h1>
+                
+                    <input class="w-40 h-auto border-2 font-Fraunces" type="date"></input>
+                
+            </div>
+                 
+        </div>  
+      
+    
+    </body>
+</html>
