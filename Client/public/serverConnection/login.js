@@ -1,3 +1,5 @@
+let loggedIn=false;
+
 document.getElementById('btnSubmitFormLogIn').addEventListener('click', async (event) => {
   event.preventDefault();
 
@@ -27,15 +29,18 @@ document.getElementById('btnSubmitFormLogIn').addEventListener('click', async (e
 
     const result = await response.json();
     if (response.ok) {
-      alert('Login successful!');
       
+      console.log(joinButton);
+      console.log(profileButton);
       // Saving the information in the local storage
       localStorage.setItem('token', result.token);
       localStorage.setItem('email', result.email);
       localStorage.setItem('role', result.role);
+      loggedIn=true;
+      localStorage.setItem('loggedIn',loggedIn);
 
       // Redirect to specified URL
-      window.location.href = 'http://127.0.0.1:5500/Client/CinemaVillageFrontEnd/public/';
+      window.open(window.location.href,"_self");
     } else {
       alert(result.message);
     }
@@ -43,4 +48,9 @@ document.getElementById('btnSubmitFormLogIn').addEventListener('click', async (e
     console.error('Error during login:', error);
     alert('An error occurred during login. Please try again later.');
   }
+
 });
+
+
+
+

@@ -15,6 +15,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Gothic+A1&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
    
+    <script src="./LoggedInIndex.js" defer></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://kit.fontawesome.com/7d75bced7a.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -65,19 +67,24 @@
     </div>
 
     <div>
-        <nav class="flex items-center justify-between bg-lavender-bush p-5 text-slate-700 font-BarlowSemiCondensed">
-            <a href="/" class="text-4xl font-Bebas-Neue font-bold text-mustard-200">Cinema Village</a>
+        <nav id="navBar" class="flex items-center justify-between bg-zinc-50 p-5 text-slate-700">
+            <a href="/" class="text-4xl font-Bebas-Neue text-mustard-200">Cinema Village</a>
             <ul id="navItems" class="hidden items-center sm:flex md:flex-row md:gap-6 md:mr-3 md:text-2xl md:visible">
 
                 <li class="hover:text-mustard-200"> <a href="./">About</a></li>
                 <li class="hover:text-mustard-200"> <a href="./CinemaProgram.html">Program</a></li>
                 <li class="hover:text-mustard-200"> <a href="./">Contact</a></li>
 
-        
-                <button id="join" class="relative inline-flex items-center justify-start px-5 py-3 overflow-hidden font-BarlowSemiCondensed rounded-full group">
-                    <span class="w-32 h-32 rotate-45 translate-x-12 -translate-y-2 absolute left-0 top-0 bg-mustard-200 opacity-[3%]"></span>
-                    <span class="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-x-56 -translate-y-24 bg-mustard-100 opacity-100 group-hover:-translate-x-8"></span>
-                    <span class="relative w-full text-left text-slate-800 transition-colors duration-200 ease-in-out group-hover:text-white">
+                <li id="userProfile" class="hover:text-mustard-200 hidden"><a href="./UserPage.html">My Profile</a></li>
+
+                <button id="join"
+                    class="relative inline-flex items-center justify-start px-5 py-3 overflow-hidden font-BarlowSemiCondensed rounded-full group">
+                    <span
+                        class="w-32 h-32 rotate-45 translate-x-12 -translate-y-2 absolute left-0 top-0 bg-mustard-200 opacity-[3%]"></span>
+                    <span
+                        class="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-x-56 -translate-y-24 bg-mustard-100 opacity-100 group-hover:-translate-x-8"></span>
+                    <span
+                        class="relative w-full text-left text-slate-800 transition-colors duration-200 ease-in-out group-hover:text-white">
                         Sign In
                     </span>
                     <span class="absolute inset-0 border-2 border-slate-800 rounded-full hover:border-red-400"></span>

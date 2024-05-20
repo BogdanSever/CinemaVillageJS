@@ -1,6 +1,6 @@
 const sql = require('mssql/msnodesqlv8');
 
-const connectionString = 'Driver={ODBC Driver 17 for SQL Server};Server=SEYFER;Database=CinemaDB;Trusted_Connection=yes;';
+const connectionString = 'Driver={ODBC Driver 17 for SQL Server};Server=FELIX;Database=CinemaDB;Trusted_Connection=yes;';
 
 const config = {
     connectionString: connectionString,

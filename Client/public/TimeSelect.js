@@ -7,6 +7,7 @@ let Mitty=["17:25","19:30","21:45"]
 
 function OpenCheckOut(){
 
+    if(localStorage.getItem("loggedIn")=="true")
     window.open("./CheckOutPage.html",'_self');
     
 }
