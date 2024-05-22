@@ -1,4 +1,4 @@
-let loggedIn=false;
+let loggedIn = false;
 
 document.getElementById('btnSubmitFormLogIn').addEventListener('click', async (event) => {
   event.preventDefault();
@@ -29,18 +29,17 @@ document.getElementById('btnSubmitFormLogIn').addEventListener('click', async (e
 
     const result = await response.json();
     if (response.ok) {
-      
+
       console.log(joinButton);
       console.log(profileButton);
       // Saving the information in the local storage
-      localStorage.setItem('token', result.token);
       localStorage.setItem('email', result.email);
       localStorage.setItem('role', result.role);
-      loggedIn=true;
-      localStorage.setItem('loggedIn',loggedIn);
+      loggedIn = true;
+      localStorage.setItem('loggedIn', loggedIn);
 
       // Redirect to specified URL
-      window.open(window.location.href,"_self");
+      window.open(window.location.href, "_self");
     } else {
       alert(result.message);
     }
