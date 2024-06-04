@@ -666,6 +666,10 @@ video {
   margin: 2.5rem;
 }
 
+.m-24 {
+  margin: 6rem;
+}
+
 .m-4 {
   margin: 1rem;
 }
@@ -686,6 +690,11 @@ video {
 .mx-20 {
   margin-left: 5rem;
   margin-right: 5rem;
+}
+
+.mx-24 {
+  margin-left: 6rem;
+  margin-right: 6rem;
 }
 
 .mx-4 {
@@ -1157,6 +1166,10 @@ video {
 
 .p-0 {
   padding: 0px;
+}
+
+.p-10 {
+  padding: 2.5rem;
 }
 
 .p-2 {
