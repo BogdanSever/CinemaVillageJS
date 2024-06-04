@@ -39,13 +39,14 @@ document.getElementById('btnSubmitFormSignUp').addEventListener('click', async (
       alert('User added successfully!');
 
       // Saving the information in the local storage
-      localStorage.setItem('email', result.email);
-      localStorage.setItem('role', result.role);
+      localStorage.setItem('email',email);
+      localStorage.setItem('role', 'user');
       loggedIn = true;
       localStorage.setItem('loggedIn', loggedIn);
+      localStorage.setItem('fullName', family_name + " " + given_name);
 
       // Redirect to specified URL
-      window.location.href = 'http://127.0.0.1:5500/Client/CinemaVillageFrontEnd/public/';
+      window.location.href = 'http://127.0.0.1:5500/Client/public/';
     } else {
       alert(result.error);
     }

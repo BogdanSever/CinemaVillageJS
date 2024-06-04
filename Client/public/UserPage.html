@@ -13,13 +13,16 @@
     <link rel="stylesheet" href="output.css">
     <script src="./script.js" defer></script>
     <script src="./Animation.js" defer></script>
-    <script src="./js/LoginSignUpForm.js" defer></script>
     <link rel="icon" href="./img/IuliaLogo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Gothic+A1&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
+
+    <script src="showUserDetails.js" defer></script>
+    <script src="ReservationDiv.js" defer></script>
+    <script src="deleteUser.js" defer></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"
         integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ=="
@@ -133,23 +136,9 @@
             <ul id="navItems" class="hidden items-center sm:flex md:flex-row md:gap-6 md:mr-3 md:text-2xl md:visible">
 
                 <li class="hover:text-mustard-200"> <a href="./">About</a></li>
-                <li class="hover:text-mustard-200"> <a href="./ProgramFilme.html">Program</a></li>
+                <li class="hover:text-mustard-200"> <a href="./CinemaProgram.html">Program</a></li>
                 <li class="hover:text-mustard-200"> <a href="./">Contact</a></li>
 
-
-                <button id="join"
-                    class="relative inline-flex items-center justify-start px-5 py-3 overflow-hidden font-BarlowSemiCondensed rounded-full group">
-                    <span
-                        class="w-32 h-32 rotate-45 translate-x-12 -translate-y-2 absolute left-0 top-0 bg-mustard-200 opacity-[3%]"></span>
-                    <span
-                        class="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-x-56 -translate-y-24 bg-mustard-100 opacity-100 group-hover:-translate-x-8"></span>
-                    <span
-                        class="relative w-full text-left text-slate-800 transition-colors duration-200 ease-in-out group-hover:text-white">
-                        Sign In
-                    </span>
-                    <span class="absolute inset-0 border-2 border-slate-800 rounded-full hover:border-red-400"></span>
-
-                </button>
             </ul>
         </nav>
     </div>
@@ -158,30 +147,22 @@
         <h1 class="text-night w-screen text-6xl my-9 font-Bebas-Neue text-center">Profile</h1>
     </div>
 
-
-    <div id="OutgoingReservation" class="pb-10 px-10 w-screen">
+    <div class="mx-10 text-2xl">
+        <h2><i class="fa-regular fa-user mx-4"></i>
+            <p id="username"></p>
+        </h2>
+        <h2 id="email"></h2>
+    </div>
+    <div class="py-10 px-10 w-screen">
         <h1 class="text-4xl text-mustard-200 mb-4 font-Montserrat">Outgoing Reservations:</h1>
-        <ul class="text-xl">
-            <li class="flex font-Montserrat items-center gap-3">Movie Title<span
-                    class="rounded-full w-2 h-2 bg-red-400 block"></span></li>
+        <ul id="OutgoingReservation" class="text-xl">
+
         </ul>
     </div>
 
-    <div class="m-10">
-        <h1 class="text-4xl font-Montserrat text-night mx-4">Up for Review</h1>
-        <div class="flex gap-4 m-4">
 
-            <div class="w-52 bg-mustard-200 p-7 rounded-xl text-center">
-                <h1>Movie title</h1>
-                <div>
-
-                </div>
-            </div>
-
-        </div>
-    </div>
     <div class="flex justify-end">
-        <button
+        <button id="deleteAccountBtn"
             class="mx-20 font-Montserrat font-bold hover:ease-in-out hover:duration-100 border-[#D2042D] border-2 p-4 rounded-md hover:bg-[#D2042D]">
             <p>Delete Account</p>
         </button>

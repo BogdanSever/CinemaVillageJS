@@ -13,6 +13,8 @@ const updateAvailabilityRoute = require('./routes/updateAvailability');
 const createBookingRoute = require('./routes/createBooking');
 const getUserIdRoute = require('./routes/getUserId');
 const getMovieXrefTheatreId = require('./routes/getMovieXrefTheatreId');
+const getReservationDetails = require('./routes/getReservations');
+const deleteUser = require('./routes/deleteUser');
 
 const app = express();
 const port = 3000;
@@ -21,7 +23,7 @@ app.use(express.json());
 // Configure CORS to allow requests from your frontend origin
 app.use(cors({
   origin: 'http://127.0.0.1:5500', // Your frontend URL
-  methods: ['GET', 'POST'],
+  methods: ['GET', 'POST', 'DELETE'],
   credentials: true // Allow credentials (cookies)
 }));
 app.use(bodyParser.json());
@@ -38,6 +40,8 @@ app.use(loginUserRoutes);
 app.use(createBookingRoute);
 app.use(getUserIdRoute);
 app.use(getMovieXrefTheatreId);
+app.use(getReservationDetails);
+app.use(deleteUser);
 
 app.listen(port, () => {
   console.log(`Server is running on port http://localhost:${port}`);

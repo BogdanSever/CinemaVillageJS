@@ -7,7 +7,7 @@ router.post('/loginUser', async (req, res) => {
   try {
     const user = await loginUser(email, password);
     if (user) {
-      res.status(200).json({ message: 'Login successful!', email: user.email, role: user.role });
+      res.status(200).json({ message: 'Login successful!', email: user.email, role: user.role, family_name: user.family_name, given_name: user.given_name });
     } else {
       res.status(401).json({ message: 'Invalid email or password' });
     }

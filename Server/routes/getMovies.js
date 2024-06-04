@@ -1,5 +1,5 @@
 const express = require('express');
-const { getMoviesByDate } = require('../database/dbController'); // Adjust the path as needed
+const { getMoviesByDate } = require('../database/dbController');
 
 const router = express.Router();
 

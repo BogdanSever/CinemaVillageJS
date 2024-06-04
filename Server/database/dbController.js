@@ -172,6 +172,60 @@ const getMovieXrefTheatreId = async (id_movie, id_theatre, running_datetime) => 
   }
 }
 
+const getReservationDetails = async (id_user) => {
+  try {
+    const pool = await poolPromise;
+    const result = await pool.request()
+      .input('id_user', id_user)
+      .query(`
+        SELECT m.title, mxr.running_datetime, b.seats_booked, mxr.id_theatre
+        FROM Bookings b
+        JOIN MovieXrefTheatre mxr ON b.id_movie_xref_theatre = mxr.id_screen_xref_movie
+        JOIN Movies m ON mxr.id_movie = m.id_movie
+        WHERE b.id_user = @id_user
+          AND mxr.running_datetime >= GETDATE()
+      `);
+
+    if (result.recordset.length > 0) {
+      return { success: true, reservation_details: result.recordset };
+    } else {
+      return { success: true, reservation_details: null };
+    }
+  } catch (err) {
+    console.error('Error fetching reservation details:', err);
+    return { success: false, error: 'Internal server error' };
+  }
+};
+
+const deleteUser = async (id_user) => {
+  try {
+    const pool = await poolPromise;
+    const transaction = pool.transaction();
+
+    await transaction.begin();
+
+    try {
+      await transaction.request()
+        .input('id_user', id_user)
+        .query(`
+          DELETE FROM Bookings WHERE id_user = @id_user;
+          DELETE FROM Reviews WHERE id_user = @id_user;
+          DELETE FROM Users WHERE id_user = @id_user;
+        `);
+
+      await transaction.commit();
+      return { success: true };
+    } catch (err) {
+      await transaction.rollback();
+      throw err;
+    }
+  } catch (err) {
+    console.error('Error deleting user:', err);
+    return { success: false, error: 'Internal server error' };
+  }
+};
+
+
 module.exports = {
   getAllUsers,
   addUser,
@@ -182,5 +236,7 @@ module.exports = {
   updateSeatAvailability,
   createBooking,
   getUserIdByEmail,
-  getMovieXrefTheatreId
+  getMovieXrefTheatreId,
+  getReservationDetails,
+  deleteUser
 };

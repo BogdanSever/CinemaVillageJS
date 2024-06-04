@@ -37,6 +37,7 @@ document.getElementById('btnSubmitFormLogIn').addEventListener('click', async (e
       localStorage.setItem('role', result.role);
       loggedIn = true;
       localStorage.setItem('loggedIn', loggedIn);
+      localStorage.setItem('fullName', result.family_name + " " + result.given_name);
 
       // Redirect to specified URL
       window.open(window.location.href, "_self");
@@ -49,7 +50,3 @@ document.getElementById('btnSubmitFormLogIn').addEventListener('click', async (e
   }
 
 });
-
-
-
-
